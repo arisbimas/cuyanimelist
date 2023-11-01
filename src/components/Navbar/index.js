@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import React from 'react'
+import InputSearch from './InputSearch'
 
 export default function Navbar() {
     return (
-        <header className='bg-amber-700'>
-            <div className='flex md:flex-row flex-col justify-between p-4 '>
-                <Link href={"/"} className='font-bold text-white text-2xl'>CUY ANIME LIST</Link>
-                <input placeholder='cari anime...' className='' />
+        <header className='bg-brand-accent'>
+            <div className='flex md:flex-row flex-col justify-between md:items-center p-4 '>
+                <Link href={"/"} className='font-bold text-2xl'>CUY ANIME LIST</Link>
+                <InputSearch />
             </div>
         </header>
     )
