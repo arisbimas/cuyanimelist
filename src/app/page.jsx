@@ -9,7 +9,7 @@ export default async function Page() {
   return (
     <div>
       <section>
-        <Header title="Pupuler" linkHref="/pupuler" linkTitle="Lihat semua" />
+        <Header title="Pupuler" linkHref="/populer" linkTitle="Lihat semua" />
         <AnimeList api={topAnime} />
       </section>
     </div>
