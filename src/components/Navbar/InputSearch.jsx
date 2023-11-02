@@ -10,14 +10,15 @@ export default function InputSearch() {
 
     const handleSearch = (e) => {
         e.preventDefault()
-        const keyword = searchRef.current.value
+        const keyword = searchRef.current.value;
+        if (!keyword) return
         router.push(`/search/${keyword}`)
     }
 
     return (
         <div className="relative">
             <input
-                placeholder="cari anime"
+                placeholder="cari anime..."
                 className="p-2 rounded w-full"
                 ref={searchRef}
                 onKeyDown={(e) => {

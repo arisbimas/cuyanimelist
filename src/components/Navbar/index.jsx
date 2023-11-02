@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import InputSearch from './InputSearch'
+import InputSearch from '@/components/Navbar/InputSearch'
 
 export default function Navbar() {
     return (
