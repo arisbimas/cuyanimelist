@@ -7,7 +7,7 @@ export default function AnimeList({ api }) {
         <div className="grid  lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-2 px-4">
             {api?.data?.map((item) => {
                 return (
-                    <Link href={`/${item.mal_id}`} className='cursor-pointer text-brand-primary hover:text-brand-accent transition-all ' key={item.mal_id}>
+                    <Link href={`/anime/${item.mal_id}`} className='cursor-pointer text-brand-primary hover:text-brand-accent transition-all ' key={item.mal_id}>
                         <Image
                             src={item.images.webp.image_url}
                             alt="image anime"
