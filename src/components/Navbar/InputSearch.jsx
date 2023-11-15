@@ -11,7 +11,7 @@ export default function InputSearch() {
     const handleSearch = (e) => {
         e.preventDefault()
         const keyword = searchRef.current.value;
-        if (!keyword) return
+        if (!keyword || keyword.trim() == "") return
         router.push(`/search/${keyword}`)
     }
 
