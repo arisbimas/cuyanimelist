@@ -6,7 +6,6 @@ export default async function Page() {
   const topAnime = await getAnimeResponse('top/anime', 'limit=5')
   let recomendationsAnime = await getNestedAnimeResponse('recommendations/anime', 'entry')
   recomendationsAnime = reproduce(recomendationsAnime, 5)
-  console.log(recomendationsAnime);
   return (
     <div>
       <section>
