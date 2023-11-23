@@ -7,8 +7,8 @@ export default async function Page() {
     return (
         <div className="text-brand-primary flex flex-col items-center">
             <h1>Dashboard</h1>
-            <h3>Hello, {user.name}</h3>
-            <Image src={user.image} alt="ava" width={200} height={200} />
+            <h3>Hello, {user?.name}</h3>
+            <Image src={user?.image} alt="ava" width={200} height={200} />
         </div>
     )
 }

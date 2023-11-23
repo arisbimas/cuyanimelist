@@ -8,7 +8,7 @@ export default async function UserActionButton() {
     const actionUrl = user ? '/api/auth/signout' : '/api/auth/signin'
     return (
         <div className='flex gap-2 justify-between items-center py-2'>
-            {user ? <Link href={'user/dashboard'}>Dashboard</Link> : null}
+            {user ? <Link href={'/user/dashboard'}>Dashboard</Link> : null}
             <Link href={actionUrl} className='bg-brand-dark text-brand-accent px-6 py-2'>{actionLabel}</Link>
         </div>
     )
