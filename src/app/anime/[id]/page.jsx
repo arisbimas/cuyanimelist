@@ -1,4 +1,6 @@
 import CollectionButton from "@/components/AnimeList/CollectionButton"
+import CommentInput from "@/components/AnimeList/CommentInput"
+import { CommentList } from "@/components/AnimeList/CommentList"
 import VideoPlayer from "@/components/Utilities/VideoPlayer"
 import { authUserSession } from "@/libs/auth-libs"
 import prisma from "@/libs/prisma"
@@ -15,7 +17,13 @@ export default async function Page({ params: { id } }) {
         <>
             <div className="pt-4 px-4">
                 <h3 className="text-2xl text-brand-primary">{anime?.data.title} - {anime?.data.year}</h3>
-                {!collection && user && <CollectionButton animeMalId={id} userEmail={user?.email} />}
+                {!collection && user &&
+                    <CollectionButton
+                        animeMalId={id}
+                        userEmail={user?.email}
+                        animeImage={anime.data.images.webp.image_url}
+                        animeTitle={anime?.data.title}
+                    />}
             </div>
             <div className="pt-4 px-4 flex gap-2 text-brand-primary overflow-x-auto">
                 <div className="w-36 flex flex-col justify-center items-center rounded border border-brand-primary p-2">
@@ -45,6 +53,11 @@ export default async function Page({ params: { id } }) {
                     className="w-full rounded object-cover"
                 />
                 <p className="text-justify text-xl text-brand-primary">{anime.data.synopsis}</p>
+            </div>
+            <div className="p-4">
+                <h3 className="text-2xl text-brand-primary mb-2">Komentar</h3>
+                <CommentList animeMalId={id} />
+                {user && <CommentInput animeMalId={id} userEmail={user?.email} username={user?.name} animeTitle={anime?.data.title} />}
             </div>
             <div>
                 <VideoPlayer

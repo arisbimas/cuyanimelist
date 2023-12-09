@@ -18,7 +18,7 @@ export default async function Page() {
                 <Link
                     href="/user/dashboard/comment"
                     className="px-4 py-2 bg-brand-accent text-brand-dark rounded-sm font-semibold"
-                >My Apa ya</Link>
+                >My Comment</Link>
             </div>
         </div>
     )
